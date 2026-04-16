@@ -1,75 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stefano Palazzo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
 
-        header {
-            padding: 40px;
-            text-align: center;
-            background: #1e293b;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #020617;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
+nav a {
+    color: #38bdf8;
+    margin-left: 15px;
+    text-decoration: none;
+}
 
-        section {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
+.hero h1 {
+    font-size: 3rem;
+}
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
-    </style>
+.hero p {
+    color: #94a3b8;
+}
+
+.section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Stefano Palazzo</h1>
-    <p>PhD Student | University of Oxford</p>
-</header>
+<nav>
+    <div><strong>YourName</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#links">Links</a>
+    </div>
+</nav>
 
-<section>
+<section class="hero">
+    <h1>Your Name</h1>
+    <p>Tech Creator | Developer | YouTuber</p>
+</section>
+
+<section id="about" class="section">
     <div class="card">
         <h2>About Me</h2>
-        <p>Write a short introduction about yourself.</p>
-    </div>
-
-    <div class="card">
-        <h2>Projects</h2>
-        <ul>
-            <li><a href="#">Project 1</a></li>
-            <li><a href="#">Project 2</a></li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Email: stefano.palazzo@materials.ox.ac.uk</p>
+        <p>I create videos and projects about technology, coding, and innovation.</p>
     </div>
 </section>
+
+<section id="projects" class="section">
+    <h2>Projects / Videos</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Project 1</h3>
+            <p>Short description</p>
+        </div>
+        <div class="card">
+            <h3>Project 2</h3>
+            <p>Short description</p>
+        </div>
+    </div>
+</section>
+
+<section id="links" class="section">
+    <div class="card">
+        <h2>Find Me</h2>
+        <p>
+            <a href="#">YouTube</a> |
+            <a href="#">GitHub</a> |
+            <a href="#">Twitter</a>
+        </p>
+    </div>
+</section>
+
+<div class="footer">
+    © 2026 Your Name
+</div>
 
 </body>
 </html>
