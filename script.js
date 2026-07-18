@@ -42,43 +42,6 @@ tabButtons.forEach((button, index) => {
 window.addEventListener('hashchange', () => activateTab(location.hash.slice(1), { updateHash: false }));
 activateTab(location.hash.slice(1) || 'about', { updateHash: false });
 
-const themeButton = document.querySelector('[data-theme-toggle]');
-const themeLabel = themeButton.querySelector('.theme-label');
-const themeColor = document.querySelector('meta[name="theme-color"]');
-const storedTheme = localStorage.getItem('theme');
-const preferredTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-function setTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeButton.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-  themeLabel.textContent = theme === 'dark' ? 'Light' : 'Dark';
-  themeColor.setAttribute('content', theme === 'dark' ? '#171c19' : '#edf0eb');
-}
-
-setTheme(storedTheme || preferredTheme);
-themeButton.addEventListener('click', () => {
-  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('theme', nextTheme);
-  setTheme(nextTheme);
-});
-
-function revealEmail() {
-  const local = 'ozzalap.onafets'.split('').reverse().join('');
-  const domain = 'ku.ca.xo.slairetaM'.toLowerCase().split('').reverse().join('');
-  const address = `${local}@${domain}`;
-  document.querySelectorAll('[data-email-action]').forEach((control) => {
-    const replacement = document.createElement('a');
-    replacement.className = control.className;
-    replacement.href = `mailto:${address}`;
-    replacement.textContent = address;
-    replacement.setAttribute('aria-label', `Email ${address}`);
-    control.replaceWith(replacement);
-  });
-  location.href = `mailto:${address}`;
-}
-
-document.querySelectorAll('[data-email-action]').forEach((button) => button.addEventListener('click', revealEmail, { once: true }));
-
 const lightboxData = {
   workshop: {
     src: 'assets/workshop.webp',
